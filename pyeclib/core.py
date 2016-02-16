@@ -198,7 +198,7 @@ class ECStripingDriver(object):
         :raises: ECDriverError if there is an error during encoding
         """
         # Main fragment size
-        fragment_size = math.ceil(len(data_bytes) / float(self.k))
+        fragment_size = int(math.ceil(len(data_bytes) / float(self.k)))
 
         # Size of last fragment
         last_fragment_size = len(data_bytes) - (fragment_size * self.k - 1)
